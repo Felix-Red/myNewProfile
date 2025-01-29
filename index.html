@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felix-Red</title>
+    <title>John Doe | Software Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./scriptCSS/style.css">
 </head>
 <body>
     <nav class="nav">
@@ -14,7 +14,7 @@
             <li><a href="#projects" class="nav-link">Projects</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
-            <li><a href="./Docs/FelixResume.pdf" class="resume-btn" download="FelixResume.pdf">Download Resume</a></li>
+            <li><a href="assets/resume.pdf" class="resume-btn" download="John_Doe_Resume.pdf">Download Resume</a></li>
         </ul>
         <button class="theme-toggle" id="theme-toggle">
             <i class="fas fa-moon"></i>
@@ -73,42 +73,7 @@
             </form>
         </div>
     </section>
-    <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
 
-        themeToggle.addEventListener('click', () => {
-            body.dataset.theme = body.dataset.theme === 'light' ? 'dark' : 'light';
-            themeToggle.innerHTML = body.dataset.theme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Reveal animations on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        });
-
-        document.querySelectorAll('.project-card, .skill-chip').forEach((el) => {
-            el.style.opacity = 0;
-            el.style.transform = 'translateY(50px)';
-            el.style.transition = 'all 0.5s ease-out';
-            observer.observe(el);
-        });
-    </script>
+    <Script src="./scriptCSS/script.js"></Script>
 </body>
 </html>
